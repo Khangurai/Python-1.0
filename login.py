@@ -18,19 +18,21 @@ def login():
 
     if authenticated:
         print("Welcome " + username + "!,login successful!")
+
     else:
         print("Max attempts reached,Access denied.")
         for i in range(1, 5):
                 time.sleep(1)
                 print('time wait ', i)
+        while True:
+            retry_choice = input("Would you like to retry? (y/n): ")
+            if retry_choice.lower() == 'y':
+                login()  # Call the login function again
+                break
+            elif retry_choice.lower() == 'n':
+                print("Exiting program.")
+                break
+            else:
+                print("Invalid choice. Please enter 'y' to retry or 'n' to exit.")
 
-for j in login():
-    if authenticated == False:
-        break
-    else:
-        print(login())
-
-
-
-
-
+login()
