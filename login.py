@@ -24,7 +24,6 @@ def login():
                 time.sleep(1)
                 print('time wait ', i)
 
-login()
 for j in login():
     if authenticated == False:
         break
