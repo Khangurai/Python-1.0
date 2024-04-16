@@ -13,19 +13,19 @@ def login():
             authenticated = True
             break
         else:
-            print("Wrong username or password, try again.\n")
+            print("Wrong username or password, try again.")
             attempts += 1
 
     if authenticated:
         print("Welcome " + username + "!,login successful!")
 
     else:
-        print("Max attempts reached,Access denied.")
+        print("\nMax attempts reached,Access denied.\n")
         for i in range(1, 5):
                 time.sleep(1)
                 print('time wait ', i)
         while True:
-            retry_choice = input("Would you like to retry? (y/n): ")
+            retry_choice = input("\nWould you like to retry? (y/n): ")
             if retry_choice.lower() == 'y':
                 login()  # Call the login function again
                 break
@@ -34,5 +34,4 @@ def login():
                 break
             else:
                 print("Invalid choice. Please enter 'y' to retry or 'n' to exit.")
-
 login()
