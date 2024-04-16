@@ -23,14 +23,14 @@ def login():
         print("\nMax attempts reached,Access denied.\n")
         for i in range(1, 5):
                 time.sleep(1)
-                print('time wait ', i)
+                print(f'Time wait for {i}s')
         while True:
             retry_choice = input("\nWould you like to retry? (y/n): ")
             if retry_choice.lower() == 'y':
                 login()  # Call the login function again
                 break
             elif retry_choice.lower() == 'n':
-                print("Exiting program.")
+                print("Exiting program...")
                 break
             else:
                 print("Invalid choice. Please enter 'y' to retry or 'n' to exit.")
